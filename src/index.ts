@@ -4,7 +4,7 @@ import { Message } from 'discord.js';
 export class Command {
     name: string = 'ping';
     aliases: string[] = [];
-    run(
+    async run(
         message: Message,
         client: Client,
         margs: string[],
@@ -12,7 +12,6 @@ export class Command {
         pargs: any,
         cargs: any[]
     ) {
-        
         message.channel.send(`Pong! ${client.ws.ping}ms`);
     }
 }
