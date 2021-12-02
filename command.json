@@ -1,8 +1,8 @@
 {
-    "name": "help",
+    "name": "ping",
     "version": "0.1.0",
-    "description": "A help command that uses to standard-mongo system to provide help with you other commands!",
-    "repo": "https://github.com/mulni342/standard-mongo-help.git",
+    "description": "just a regular ping command",
+    "repo": "https://github.com/mulni342/standard-mongo-ping.git",
     "author": "mulni342",
     "targetSystem": "standard-mongo",
     "main": "dist/index.js",
