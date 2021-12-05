@@ -47,7 +47,6 @@ var Command = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var lang, pingMS;
             return __generator(this, function (_a) {
-                console.log(sargs);
                 lang = (0, lang_1.Language)(sargs['language']);
                 pingMS = lang.pingMS.replace('[ms]', String(client.ws.ping));
                 message.channel.send(pingMS);

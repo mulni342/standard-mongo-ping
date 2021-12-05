@@ -13,7 +13,6 @@ export class Command {
         pargs: any,
         cargs: any[]
     ) {
-        console.log(sargs);
         const lang = Language(sargs['language']);
 
         let pingMS = lang.pingMS.replace('[ms]', String(client.ws.ping));
