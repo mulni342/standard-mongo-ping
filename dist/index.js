@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Command = void 0;
+var lang_1 = require("./lang");
 var Command = /** @class */ (function () {
     function Command() {
         this.name = 'ping';
@@ -44,8 +45,12 @@ var Command = /** @class */ (function () {
     }
     Command.prototype.run = function (message, client, margs, sargs, pargs, cargs) {
         return __awaiter(this, void 0, void 0, function () {
+            var lang, pingMS;
             return __generator(this, function (_a) {
-                message.channel.send("Pong! " + client.ws.ping + "ms");
+                console.log(sargs);
+                lang = (0, lang_1.Language)(sargs['language']);
+                pingMS = lang.pingMS.replace('[ms]', String(client.ws.ping));
+                message.channel.send(pingMS);
                 return [2 /*return*/];
             });
         });

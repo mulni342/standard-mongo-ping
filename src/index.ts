@@ -1,5 +1,6 @@
 import { Client } from 'botasm';
 import { Message } from 'discord.js';
+import { Language } from './lang';
 
 export class Command {
     name: string = 'ping';
@@ -8,10 +9,15 @@ export class Command {
         message: Message,
         client: Client,
         margs: string[],
-        sargs: any[],
+        sargs: any,
         pargs: any,
         cargs: any[]
     ) {
-        message.channel.send(`Pong! ${client.ws.ping}ms`);
+        console.log(sargs);
+        const lang = Language(sargs['language']);
+
+        let pingMS = lang.pingMS.replace('[ms]', String(client.ws.ping));
+
+        message.channel.send(pingMS);
     }
 }
