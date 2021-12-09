@@ -1,10 +1,12 @@
 import { Client } from 'botasm';
 import { Message } from 'discord.js';
 import { Language } from './lang';
+import { BaseCommand } from "botasm"
 
-export class Command {
+export class Command extends BaseCommand {
     name: string = 'ping';
     aliases: string[] = [];
+
     async run(
         message: Message,
         client: Client,
@@ -14,6 +16,8 @@ export class Command {
         cargs: any[]
     ) {
         const lang = Language(sargs['language']);
+
+        console.log(cargs)
 
         let pingMS = lang.pingMS.replace('[ms]', String(client.ws.ping));
 
